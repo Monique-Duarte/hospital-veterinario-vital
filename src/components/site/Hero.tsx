@@ -32,7 +32,7 @@ export function Hero() {
               Cuidado completo para quem você mais ama.
             </h1>
             <p className="text-lg text-gray-200 md:text-xl">
-              Hospitais Veterinários 24h em Imbituba e Laguna com centro cirúrgico e especialistas em oncologia e felinos.
+              Hospitais Veterinários 24h em Imbituba e Laguna com centro cirúrgico e atendimento especializado em cirurgia, oncologia e felinos.
             </p>
           </div>
           <div className="mt-8">
