@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
-import logo from '@/assets/logo.svg';
+import logo from '@/assets/logoBranca_HV.png';
 
 export function Header() {
   return (
@@ -16,7 +16,7 @@ export function Header() {
             width={40} // É uma boa prática definir width e height
           />
           <span className="font-poppins text-2xl font-bold text-secondary hidden sm:block">
-            Vital
+            Hospital Veterinário Vital
           </span>
         </Link>
 

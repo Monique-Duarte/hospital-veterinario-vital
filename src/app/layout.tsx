@@ -4,13 +4,11 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/site/Header";
 
-// Configuração da fonte para o corpo do texto
 const fontInter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-// Configuração da fonte para os títulos
 const fontPoppins = Poppins({
   subsets: ["latin"],
   weight: ["600", "700"],
