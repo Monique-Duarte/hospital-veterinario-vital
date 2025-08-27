@@ -3,8 +3,9 @@ import { Check } from "lucide-react";
 const servicos = [
   "Consultas de Rotina",
   "Vacinação",
-  "Cirurgias Gerais",
   "Diagnóstico por Imagem",
+  "Cirurgias Gerais",
+  "Cirurgias Complexas",
   "Exames Laboratoriais",
   "Internação 24h",
   "Odontologia Veterinária",
@@ -14,7 +15,7 @@ const servicos = [
 
 export function Servicos() {
   return (
-    <section id="servicos" className="py-12 lg:py-24 bg-muted">
+    <section id="servicos" className="py-12 lg:py-24 bg-[#fff] w-[90%] mx-auto">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-12">
           <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">
