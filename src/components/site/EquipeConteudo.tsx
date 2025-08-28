@@ -10,41 +10,51 @@ type MembroEquipe = {
   name: string;
   role: string;
   imageSrc: string;
+  // unit: "Imbituba" | "Laguna";
 };
 
 type VideoEducativo = {
   title: string;
   description: string;
-  posterSrc: string; // Manter posterSrc pois você tem as imagens agora
+  posterSrc: string;
   videoSrc: string;
   instagramUrl: string;
 };
 
+
 const equipe: MembroEquipe[] = [
-  { name: "Dr. Douglas Vincentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 1234", imageSrc: "/equipe-1.jpg" },
-  { name: "Dr. Guilherme Pereira", role: "Anestesiologista, Responsável Técnico e Coordenador de equipe| CRMV-SC 5678", imageSrc: "/equipe-Gui.png" },
-  { name: "Dra. Andressa", role: "Cirurgião | CRMV-SC 9101", imageSrc: "/equipe-3.jpg" },
-  { name: "Dra. Bruna", role: "Clinico Geral | CRMV-SC 9101", imageSrc: "/equipe-3.jpg" },
-  { name: "Dr. Ramon Santiago", role: "Clinico Geral, Clinica de Felinos | CRMV-SC 9101", imageSrc: "/equipe-3.jpg" },
-  { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 1121", imageSrc: "/equipe-4.jpg" },
-  { name: "Dra. Marina", role: "Clinico Geral | CRMV-SC 9101", imageSrc: "/equipe-3.jpg" },
+  { name: "Dr. Douglas Vincentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 1234", imageSrc: "/equipe-1.jpg"},
+  { name: "Dra. Ana Lívia Vincentin", role: "Anestesiologista, Clínica de Felinos | CRMV-SC 4952", imageSrc: "/equipe-1.jpg"},
+  { name: "Dr. Guilherme Pereira", role: "Anestesiologista, Responsável Técnico e Coordenador de equipe | CRMV-SC 11054", imageSrc: "/equipe-Gui.png" },
+  { name: "Dra. Andressa Spengler", role: "Cirurgiã, Oncologista | CRMV-SC 9101", imageSrc: "/equipe-1.jpg"},
+  { name: "Dra. Bruna Oliveira", role: "Clínica Geral, Clínica de Felinos | CRMV-SC 9101", imageSrc: "/equipe-1.jpg" },
+  { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 9101", imageSrc: "/equipe-1.jpg" },
+  { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 9101", imageSrc: "/equipe-1.jpg" },
+  { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 1121", imageSrc: "/equipe-1.jpg" },
 ];
+
+
+// const equipeImbituba = equipe.filter(membro => membro.unit === "Imbituba");
+// const equipeLaguna = equipe.filter(membro => membro.unit === "Laguna");
+
 
 const videos: VideoEducativo[] = [
   { title: "Lidando com Casos Complexos", description: "Entenda como nossa equipe multidisciplinar atua.", posterSrc: "/poster-casos.jpg", videoSrc: "/video-casos.mp4", instagramUrl: "https://www.instagram.com/reel/DM8u8C_u2Rw/" },
   { title: "A Importância do Check-up", description: "Prevenção é o melhor caminho para uma vida longa e saudável.", posterSrc: "/poster-checkup.jpg", videoSrc: "/video-checkup.mp4", instagramUrl: "https://www.instagram.com/reel/C1rr4d9OY1Z/" },
-  { title: "Obstrução uretral em Felinos", description: "Essa é uma complicação que costuma atingir mais os gatos machos e pode causar sérios riscos à vida do seu amigo de quatro patas.", posterSrc: "/poster-obstrucao.jpg", videoSrc: "/video-cuidado-felinos.mp4", instagramUrl: "https://www.instagram.com/reel/DBMCzMTO4v_/" },
+  { title: "Obstrução uretral em Felinos", description: "Essa é uma complicação que pode causar sérios riscos à vida do seu amigo.", posterSrc: "/poster-obstrucao.jpg", videoSrc: "/video-cuidado-felinos.mp4", instagramUrl: "https://www.instagram.com/reel/DBMCzMTO4v_/" },
+  { title: "Como minimizar o estresse do paciente", description: "O nervosismo do pet pode interferir no exame e até no diagnóstico.", posterSrc: "/poster-comportamento.jpg", videoSrc: "/video-comportamento.mp4", instagramUrl: "https://www.instagram.com/p/DNYUlNhuN7J/" },
+  // { title: "Anestesia em paciente idoso?", description: "Um cão com idade mais avançada também pode receber anestesia?", posterSrc: "/poster-anestIdoso.jpg", videoSrc: "/video-anestIdoso.mp4", instagramUrl: "https://www.instagram.com/p/C74xsxjuQ_J/" },
   // Adicione os outros vídeos aqui
 ];
-// ------------------------------------
+
 
 export function EquipeConteudo() {
   const [selectedVideo, setSelectedVideo] = useState<VideoEducativo | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false); // Novo estado para controlar play do vídeo
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleOpenVideo = (video: VideoEducativo) => {
     setSelectedVideo(video);
-    setIsPlaying(false); // Reseta o estado de play ao abrir o modal
+    setIsPlaying(false);
   };
 
   return (
@@ -52,41 +62,79 @@ export function EquipeConteudo() {
       <section id="equipe-conteudo" className="py-12 lg:py-24 bg-white">
         <div className="container px-4 md:px-6">
 
-          {/* Parte 1: Nossa Equipe */}
+          {/* Título Principal da Seção de Equipe */}
           <div className="text-center space-y-4 mb-12">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">Nossa Equipe</h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
-              Profissionais apaixonados e dedicados ao bem-estar do seu pet.
+              Profissionais apaixonados e dedicados ao bem-estar do seu pet, em cada unidade.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+
+          <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-6 justify-center items-stretch">
             {equipe.map((membro) => (
               <div key={membro.name} className="text-center space-y-2">
-                <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-md mx-auto">
+                <div className="relative w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md">
                   <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover" />
                 </div>
-                <h3 className="font-poppins font-semibold text-lg">{membro.name}</h3>
-                <p className="text-sm text-muted-foreground">{membro.role}</p>
+                <h3 className="font-poppins font-semibold text-base leading-tight">{membro.name}</h3>
+                <p className="text-sm text-muted-foreground min-h-[60px]">{membro.role}</p>
               </div>
             ))}
           </div>
 
+
+
+          {/* Seção Equipe Imbituba */}
+          {/* {equipeImbituba.length > 0 && (
+            <div className="mb-16">
+              <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">Equipe Imbituba</h3>
+              <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center"> 
+                {equipeImbituba.map((membro) => (
+                  <div key={membro.name} className="flex flex-col items-center text-center space-y-2 max-w-[120px]">
+                    <div className="relative w-24 h-24 rounded-full overflow-hidden shadow-md"> 
+                      <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover" />
+                    </div>
+                    <h4 className="font-poppins font-semibold text-base leading-tight">{membro.name}</h4> 
+                    <p className="text-xs text-muted-foreground leading-tight">{membro.role}</p> 
+                  </div>
+                ))}
+              </div>
+            </div>
+          )} */}
+
+          {/* Seção Equipe Laguna */}
+          {/* {equipeLaguna.length > 0 && (
+            <div>
+              <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">Equipe Laguna</h3>
+              <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+                {equipeLaguna.map((membro) => (
+                  <div key={membro.name} className="flex flex-col items-center text-center space-y-2 max-w-[120px]">
+                    <div className="relative w-24 h-24 rounded-full overflow-hidden shadow-md">
+                      <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover" />
+                    </div>
+                    <h4 className="font-poppins font-semibold text-base leading-tight">{membro.name}</h4>
+                    <p className="text-xs text-muted-foreground leading-tight">{membro.role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )} */}
+          
           {/* Parte 2: Conteúdo Educativo */}
-          <div className="text-center space-y-4 mt-16 lg:mt-24 mb-12">
+          <div className="text-center space-y-4 mt-8 lg:mt-24 mb-12">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">Conteúdo Educativo</h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
               Informação de qualidade para você cuidar ainda melhor do seu melhor amigo.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {videos.map((video) => (
               <div 
                 key={video.title} 
-                onClick={() => handleOpenVideo(video)} // Usa a nova função
+                onClick={() => handleOpenVideo(video)}
                 className="relative group cursor-pointer rounded-lg overflow-hidden shadow-lg transition-shadow hover:shadow-xl"
               >
-                {/* MODIFICADO: aspect-square para imagens de capa */}
-                <div className="relative w-full aspect-square">
+                <div className="relative w-full aspect-[9/16]">
                   <Image src={video.posterSrc} alt={`Capa do vídeo ${video.title}`} fill className="object-cover transition-transform group-hover:scale-105" />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <PlayCircle className="h-16 w-16 text-white/80 transition-transform group-hover:scale-110" />
@@ -104,18 +152,16 @@ export function EquipeConteudo() {
       </section>
 
       {/* Modal para os vídeos educativos */}
-      <Dialog open={!!selectedVideo} onOpenChange={() => {setSelectedVideo(null); setIsPlaying(false);}}> {/* Reseta isPlaying ao fechar */}
+      <Dialog open={!!selectedVideo} onOpenChange={() => {setSelectedVideo(null); setIsPlaying(false);}}>
         <DialogContent className="max-w-fit p-0 sm:p-4 border-0 bg-transparent shadow-none">
           {selectedVideo?.videoSrc && (
             <div className="flex flex-col items-center gap-4">
               <div className="h-[90vh] sm:h-[80vh] aspect-[9/16] rounded-lg overflow-hidden shadow-lg"> 
-                {/* Adicionando poster para o vídeo e onPlay para setIsPlaying */}
                 <video 
                   key={selectedVideo.videoSrc} 
                   className="w-full h-full object-cover" 
                   src={selectedVideo.videoSrc} 
                   controls 
-                  // Adicionado poster e removido autoplay direto para dar controle ao usuário
                   poster={selectedVideo.posterSrc} 
                   onPlay={() => setIsPlaying(true)}
                 />
