@@ -10,7 +10,7 @@ export function Footer() {
       <div className="container px-4 md:px-6 max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           
-          <div className="lg:col-span-2 flex flex-col items-start space-y-4">
+          <div className="lg:col-span-2 flex flex-col items-center md:items-start space-y-4">
             <Link href="/" className="flex items-center gap-3">
               <Image 
                 src={logo} 
@@ -22,7 +22,7 @@ export function Footer() {
             <p className="text-primary-foreground/80 text-sm max-w-xs">
               Cuidado completo e inovador para o seu melhor amigo. Atendimento 24h em Imbituba/Garopaba e Laguna.
             </p>
-            <div className="flex gap-4">
+            <div className="hidden md:flex gap-4">
               <a href="https://www.instagram.com/vital.hospitalveterinario/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-white transition-colors">
                 <Instagram />
               </a>

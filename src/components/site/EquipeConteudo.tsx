@@ -59,7 +59,7 @@ export function EquipeConteudo() {
 
   return (
     <>
-      <section id="equipe-conteudo" className="py-12 lg:py-24 bg-white">
+      <section id="equipe-conteudo" className="py-12 lg:py-12 bg-white">
         <div className="container px-4 md:px-6">
 
           {/* Título Principal da Seção de Equipe */}
@@ -121,12 +121,19 @@ export function EquipeConteudo() {
           )} */}
           
           {/* Parte 2: Conteúdo Educativo */}
-          <div className="text-center space-y-4 mt-8 lg:mt-24 mb-12">
+          <div className="text-center space-y-4 mt-16 lg:mt-24 mb-16">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">Conteúdo Educativo</h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
               Informação de qualidade para você cuidar ainda melhor do seu melhor amigo.
-            </p>
+            </p>            
+            <Button asChild variant="outline">
+              <a href="https://www.instagram.com/vital.hospitalveterinario/" target="_blank" rel="noopener noreferrer">
+                <Instagram className="mr-2 h-4 w-4" />
+                Acessar Instagram para mais dicas
+              </a>
+            </Button>
           </div>
+
           <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {videos.map((video) => (
               <div 

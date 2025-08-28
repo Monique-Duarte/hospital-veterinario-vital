@@ -1,5 +1,8 @@
+"use client"; 
+import { useState, useEffect } from 'react'; 
 import Link from 'next/link';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import { Button } from "@/components/ui/button";
 import logo from '@/assets/logoBranca.png';
 import { Instagram, Phone, MapPin } from 'lucide-react';
@@ -27,6 +30,31 @@ const contatos = {
 }
 
 export function Header() {
+  const [activeSection, setActiveSection] = useState('inicio');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['inicio', 'sobre-vital', 'equipe-conteudo', 'diferenciais', 'servicos', 'unidades', 'contato'];
+      const offset = 150;
+
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= offset && rect.bottom >= offset) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 w-full bg-primary text-primary-foreground z-50 shadow-md">
       <div className="container mx-auto h-20 flex items-center justify-between">
@@ -41,24 +69,23 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
-          <Link href="#inicio" className="text-primary-foreground/80 hover:text-white transition-colors">Início</Link>
-          <Link href="#sobre-vital" className="text-primary-foreground/80 hover:text-white transition-colors">Sobre</Link>
-          <Link href="#equipe-conteudo" className="text-primary-foreground/80 hover:text-white transition-colors">Equipe</Link>
-          <Link href="#servicos" className="text-primary-foreground/80 hover:text-white transition-colors">Serviços</Link>
-          <Link href="#diferenciais" className="text-primary-foreground/80 hover:text-white transition-colors">Diferenciais</Link>
-          <Link href="#unidades" className="text-primary-foreground/80 hover:text-white transition-colors">Unidades</Link>
-          <Link href="#contato" className="text-primary-foreground/80 hover:text-white transition-colors">Contato</Link>
+          <Link href="#inicio" className={cn("transition-colors hover:text-white", activeSection === 'inicio' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Início</Link>
+          <Link href="#sobre-vital" className={cn("transition-colors hover:text-white", activeSection === 'sobre-vital' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Sobre</Link>
+          <Link href="#equipe-conteudo" className={cn("transition-colors hover:text-white", activeSection === 'equipe-conteudo' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Equipe</Link>
+          <Link href="#servicos" className={cn("transition-colors hover:text-white", activeSection === 'servicos' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Serviços</Link>
+          <Link href="#diferenciais" className={cn("transition-colors hover:text-white", activeSection === 'diferenciais' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Diferenciais</Link>
+          <Link href="#unidades" className={cn("transition-colors hover:text-white", activeSection === 'unidades' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Unidades</Link>
+          <Link href="#contato" className={cn("transition-colors hover:text-white", activeSection === 'contato' ? 'text-white font-semibold' : 'text-primary-foreground/80')}>Contato</Link>
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="https://www.instagram.com/vital.hospitalveterinario/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-white transition-colors">
-            <Instagram />
+          <a href="https://www.instagram.com/vital.hospitalveterinario/" target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-white">
+            <Instagram className="h-4 w-4" />
           </a>
           <Dialog>
             <DialogTrigger asChild>
-              <Button variant="outline" className="hidden md:flex border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-white">
-                <WhatsappIcon className="mr-2 h-4 w-4" />
-                WhatsApp
+              <Button variant="ghost" size="icon" className="flex border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-white">
+                <WhatsappIcon className="h-6 w-6" />
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px] bg-secondary border-none">
@@ -87,7 +114,7 @@ export function Header() {
             <DialogTrigger asChild>
               <Button 
                 variant="destructive" 
-                className="hidden sm:flex shadow-lg hover:brightness-90 transition-all"
+                className="sm:flex shadow-lg hover:brightness-90 transition-all"
               >
                 Emergência 24H
               </Button>

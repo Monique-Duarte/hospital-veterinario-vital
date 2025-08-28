@@ -6,7 +6,7 @@ import { WhatsappIcon } from "../icons/WhatsappIcon";
 const unidades = [
   {
     name: "Unidade Imbituba / Garopaba",
-    address: "Rodovia SC 434, Araçatuba, Imbituba - SC, 88780-000",
+    address: "Rodovia SC 434, km 01, Araçatuba, Imbituba - SC, 88780-000",
     imageSrc: "/hero-imbituba.png",
     mapLink: "https://maps.app.goo.gl/H8f5D9L9qoX3JTTm7",
     phone: "4898000012",
