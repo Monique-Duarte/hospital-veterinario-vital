@@ -60,8 +60,6 @@ export function Hero() {
             <h1 className="font-poppins text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight">
               {slide.title}
             </h1>
-            <p className="text-lg text-gray-200 md:text-xl">
-              Hospitais Veterinários 24h em Imbituba e Laguna com centro cirúrgico e atendimento especializado em cirurgia, oncologia e felinos.
             <p className="mt-4 text-lg sm:text-xl text-white/90">
               {slide.subtitle}
             </p>
