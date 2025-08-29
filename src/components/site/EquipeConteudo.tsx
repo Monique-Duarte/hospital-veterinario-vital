@@ -24,9 +24,9 @@ type VideoEducativo = {
 
 const equipe: MembroEquipe[] = [
   { name: "Dr. Douglas Vicentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 1234", imageSrc: "/equipe-Douglas.jpg", unit: "Imbituba"},
-  { name: "Dra. Ana Lívia Vinentin", role: "Anestesiologista, Clínica de Felinos | CRMV-SC 4952", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
+  { name: "Dra. Ana Lívia Vinentin", role: "Anestesiologista e Clínica de Felinos | CRMV-SC 4952", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
   { name: "Dr. Guilherme Pereira", role: "Anestesiologista, Responsável Técnico e Coordenador de equipe | CRMV-SC 11054", imageSrc: "/equipe-Gui.png", unit: "Imbituba"},
-  { name: "Dra. Andressa Spengler", role: "Cirurgiã, Oncologista | CRMV-SC 9101", imageSrc: "/equipe-Andressa.jpg", unit: "Imbituba"},
+  { name: "Dra. Andressa Spengler", role: "Cirurgia Geral e Oncologista | CRMV-SC 9101", imageSrc: "/equipe-Andressa.jpg", unit: "Imbituba"},
   { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 9101", imageSrc: "/equipe-Ramon.jpg", unit: "Imbituba" },
   { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 9101", imageSrc: "/equipe-Mari.jpg", unit: "Imbituba"},
   { name: "Dra. Bruna Oliveira", role: "Clínica e Cirurgia Geral, e Felinos | CRMV-SC 9101", imageSrc: "/equipe-Bruna.jpg", unit: "Imbituba"},
