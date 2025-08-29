@@ -40,9 +40,9 @@ export function Footer() {
                   <MapPin size={16} className="mt-1 flex-shrink-0" />
                   <span>Rodovia SC 434, km 01, Araçatuba, Imbituba - SC</span>
                 </a>
-                <a href="https://wa.me/489998001111" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-white">
+                <a href="https://wa.me/48998001111" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-white">
                     <WhatsappIcon className="h-4 w-4" />
-                    <span>(48) 999800-1111 (WhatsApp)</span>
+                    <span>(48) 99800-1111 (WhatsApp)</span>
                 </a>
                 <a href="tel:48998000012" className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-white">
                     <Phone size={16}/> 
