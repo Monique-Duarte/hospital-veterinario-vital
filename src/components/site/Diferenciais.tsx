@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Beaker, Stethoscope, Cat, Microscope, Home, Clock, Plane, Video, Camera, HeartPulse } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { Instagram } from "lucide-react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { X } from "lucide-react";
 
 type Diferencial = {
   icon: JSX.Element;
@@ -84,7 +86,8 @@ export function Diferenciais() {
               Nossos Diferenciais
             </h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
-              Tecnologia e cuidado que fazem a diferença na vida do seu pet. Interaja com os cards para saber mais.
+              Tecnologia e cuidado que fazem a diferença na vida do seu pet.
+              Interaja com os cards para saber mais.
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
@@ -92,8 +95,8 @@ export function Diferenciais() {
               {diferenciais.map((item, index) => {
                 if (item.videoSrc) {
                   return (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       onClick={() => setSelectedVideo(item)}
                       className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm transition-all cursor-pointer hover:shadow-lg hover:-translate-y-1 bg-[#fff]"
                     >
@@ -102,16 +105,23 @@ export function Diferenciais() {
                       </div>
                       {item.icon}
                       <div className="flex flex-col flex-grow justify-center">
-                        <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                        <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
-                  )
+                  );
                 }
-                
+
                 if (item.imageSrc) {
                   return (
-                    <div key={index} className="group h-64 [perspective:1000px] bg-[#fff]">
+                    <div
+                      key={index}
+                      className="group h-64 [perspective:1000px] bg-[#fff]"
+                    >
                       <div className="relative h-full w-full rounded-lg shadow-md transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                         <div className="absolute inset-0 border rounded-lg [backface-visibility:hidden]">
                           <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 text-xs text-primary">
@@ -120,53 +130,79 @@ export function Diferenciais() {
                           </div>
                           <div className="flex flex-col items-center justify-center h-full text-center p-6">
                             {item.icon}
-                            <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">{item.title}</h3>
-                            <p className="text-muted-foreground text-sm">{item.description}</p>
+                            <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">
+                              {item.title}
+                            </h3>
+                            <p className="text-muted-foreground text-sm">
+                              {item.description}
+                            </p>
                           </div>
                         </div>
                         <div className="absolute inset-0 h-full w-full rounded-lg [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                          <Image src={item.imageSrc} alt={`Imagem para ${item.title}`} fill className="object-cover rounded-lg"/>
+                          <Image
+                            src={item.imageSrc}
+                            alt={`Imagem para ${item.title}`}
+                            fill
+                            className="object-cover rounded-lg"
+                          />
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 }
 
                 return (
-                  <div key={index} className="flex flex-col items-center text-center p-6 border rounded-lg shadow-sm bg-[#fff]">
+                  <div
+                    key={index}
+                    className="flex flex-col items-center text-center p-6 border rounded-lg shadow-sm bg-[#fff]"
+                  >
                     {item.icon}
                     <div className="flex flex-col flex-grow justify-center">
-                      <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.description}</p>
+                      <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </section>
 
+
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-fit p-0 sm:p-4 border-0 bg-transparent shadow-none">
+        <DialogContent className="max-w-fit p-0 sm:p-4 border-0 bg-transparent shadow-none relative">
+          <DialogPrimitive.Close className="absolute right-0 -top-2 sm:right-2 sm:top-2 rounded-sm opacity-80 ring-offset-background transition-opacity hover:opacity-100 z-50 bg-white/80 p-1">
+            <X className="h-6 w-6 text-secondary" />
+            <span className="sr-only">Fechar</span>
+          </DialogPrimitive.Close>
+          
+          <DialogHeader className="sr-only">
+            <DialogPrimitive.DialogTitle>{`Vídeo sobre ${selectedVideo?.title}`}</DialogPrimitive.DialogTitle>
+            <DialogPrimitive.DialogDescription>{selectedVideo?.description}</DialogPrimitive.DialogDescription>
+          </DialogHeader>
+
           {selectedVideo?.videoSrc && (
             <div className="flex flex-col items-center gap-4">
-              <div className="h-[80vh] aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
-                <video
-                  key={selectedVideo.videoSrc}
-                  className="w-full h-full object-cover"
-                  src={selectedVideo.videoSrc}
-                  controls
-                  autoPlay
-                  muted
-                  loop
+              <div className="h-[90vh] sm:h-[80vh] aspect-[9/16] rounded-lg overflow-hidden shadow-lg"> 
+                <video 
+                  key={selectedVideo.videoSrc} 
+                  className="w-full h-full object-cover" 
+                  src={selectedVideo.videoSrc} 
+                  controls 
+                  autoPlay 
+                  muted 
+                  loop 
                 />
               </div>
               <div className="text-center">
                 <Button asChild variant="outline" className="bg-white">
                   <a href={selectedVideo.instagramUrl} target="_blank" rel="noopener noreferrer">
-                    <Instagram className="mr-2 h-4 w-4" />
-                    Ver no Instagram
+                    <Instagram className="mr-2 h-4 w-4" /> Ver no Instagram
                   </a>
                 </Button>
               </div>
