@@ -10,7 +10,7 @@ type MembroEquipe = {
   name: string;
   role: string;
   imageSrc: string;
-  // unit: "Imbituba" | "Laguna";
+  unit: "Imbituba" | "Laguna";
 };
 
 type VideoEducativo = {
@@ -23,19 +23,19 @@ type VideoEducativo = {
 
 
 const equipe: MembroEquipe[] = [
-  { name: "Dr. Douglas Vincentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 1234", imageSrc: "/equipe-1.jpg"},
-  { name: "Dra. Ana Lívia Vincentin", role: "Anestesiologista, Clínica de Felinos | CRMV-SC 4952", imageSrc: "/equipe-1.jpg"},
-  { name: "Dr. Guilherme Pereira", role: "Anestesiologista, Responsável Técnico e Coordenador de equipe | CRMV-SC 11054", imageSrc: "/equipe-Gui.png" },
-  { name: "Dra. Andressa Spengler", role: "Cirurgiã, Oncologista | CRMV-SC 9101", imageSrc: "/equipe-1.jpg"},
-  { name: "Dra. Bruna Oliveira", role: "Clínica Geral, Clínica de Felinos | CRMV-SC 9101", imageSrc: "/equipe-1.jpg" },
-  { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 9101", imageSrc: "/equipe-1.jpg" },
-  { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 9101", imageSrc: "/equipe-1.jpg" },
-  { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 1121", imageSrc: "/equipe-1.jpg" },
+  { name: "Dr. Douglas Vicentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 1234", imageSrc: "/equipe-Douglas.jpg", unit: "Imbituba"},
+  { name: "Dra. Ana Lívia Vinentin", role: "Anestesiologista, Clínica de Felinos | CRMV-SC 4952", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
+  { name: "Dr. Guilherme Pereira", role: "Anestesiologista, Responsável Técnico e Coordenador de equipe | CRMV-SC 11054", imageSrc: "/equipe-Gui.png", unit: "Imbituba"},
+  { name: "Dra. Andressa Spengler", role: "Cirurgiã, Oncologista | CRMV-SC 9101", imageSrc: "/equipe-Andressa.jpg", unit: "Imbituba"},
+  { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 9101", imageSrc: "/equipe-Ramon.jpg", unit: "Imbituba" },
+  { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 9101", imageSrc: "/equipe-Mari.jpg", unit: "Imbituba"},
+  { name: "Dra. Bruna Oliveira", role: "Clínica e Cirurgia Geral, e Felinos | CRMV-SC 9101", imageSrc: "/equipe-Bruna.jpg", unit: "Imbituba"},
+  // { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 1121", imageSrc: "/equipe-1.jpg", unit: "Imbituba"},
 ];
 
 
-// const equipeImbituba = equipe.filter(membro => membro.unit === "Imbituba");
-// const equipeLaguna = equipe.filter(membro => membro.unit === "Laguna");
+const equipeImbituba = equipe.filter(membro => membro.unit === "Imbituba");
+const equipeLaguna = equipe.filter(membro => membro.unit === "Laguna");
 
 
 const videos: VideoEducativo[] = [
@@ -43,7 +43,6 @@ const videos: VideoEducativo[] = [
   { title: "A Importância do Check-up", description: "Prevenção é o melhor caminho para uma vida longa e saudável.", posterSrc: "/poster-checkup.jpg", videoSrc: "/video-checkup.mp4", instagramUrl: "https://www.instagram.com/reel/C1rr4d9OY1Z/" },
   { title: "Obstrução uretral em Felinos", description: "Essa é uma complicação que pode causar sérios riscos à vida do seu amigo.", posterSrc: "/poster-obstrucao.jpg", videoSrc: "/video-cuidado-felinos.mp4", instagramUrl: "https://www.instagram.com/reel/DBMCzMTO4v_/" },
   { title: "Como minimizar o estresse do paciente", description: "O nervosismo do pet pode interferir no exame e até no diagnóstico.", posterSrc: "/poster-comportamento.jpg", videoSrc: "/video-comportamento.mp4", instagramUrl: "https://www.instagram.com/p/DNYUlNhuN7J/" },
-  // { title: "Anestesia em paciente idoso?", description: "Um cão com idade mais avançada também pode receber anestesia?", posterSrc: "/poster-anestIdoso.jpg", videoSrc: "/video-anestIdoso.mp4", instagramUrl: "https://www.instagram.com/p/C74xsxjuQ_J/" },
   // Adicione os outros vídeos aqui
 ];
 
@@ -62,7 +61,6 @@ export function EquipeConteudo() {
       <section id="equipe-conteudo" className="py-12 lg:py-12 bg-white">
         <div className="container px-4 md:px-6">
 
-          {/* Título Principal da Seção de Equipe */}
           <div className="text-center space-y-4 mb-12">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">Nossa Equipe</h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
@@ -70,24 +68,10 @@ export function EquipeConteudo() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-6 justify-center items-stretch">
-            {equipe.map((membro) => (
-              <div key={membro.name} className="text-center space-y-2">
-                <div className="relative w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md">
-                  <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover" />
-                </div>
-                <h3 className="font-poppins font-semibold text-base leading-tight">{membro.name}</h3>
-                <p className="text-sm text-muted-foreground min-h-[60px]">{membro.role}</p>
-              </div>
-            ))}
-          </div>
-
-
-
           {/* Seção Equipe Imbituba */}
-          {/* {equipeImbituba.length > 0 && (
+          {equipeImbituba.length > 0 && (
             <div className="mb-16">
-              <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">Equipe Imbituba</h3>
+              <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">Unidade Imbituba</h3>
               <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center"> 
                 {equipeImbituba.map((membro) => (
                   <div key={membro.name} className="flex flex-col items-center text-center space-y-2 max-w-[120px]">
@@ -100,12 +84,12 @@ export function EquipeConteudo() {
                 ))}
               </div>
             </div>
-          )} */}
+          )}
 
           {/* Seção Equipe Laguna */}
-          {/* {equipeLaguna.length > 0 && (
+          {equipeLaguna.length > 0 && (
             <div>
-              <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">Equipe Laguna</h3>
+              <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">Unidade Laguna</h3>
               <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
                 {equipeLaguna.map((membro) => (
                   <div key={membro.name} className="flex flex-col items-center text-center space-y-2 max-w-[120px]">
@@ -118,7 +102,7 @@ export function EquipeConteudo() {
                 ))}
               </div>
             </div>
-          )} */}
+          )}
           
           {/* Parte 2: Conteúdo Educativo */}
           <div className="text-center space-y-4 mt-16 lg:mt-24 mb-16">

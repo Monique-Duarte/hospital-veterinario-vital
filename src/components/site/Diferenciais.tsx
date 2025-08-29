@@ -45,8 +45,8 @@ const diferenciais: Diferencial[] = [
   },
   {
     icon: <Beaker className="w-10 h-10 text-primary" />,
-    title: "Oncologia",
-    description: "Equipe qualificada em áreas como oncologia, cirurgia, anestesiologia e medicina felina.",
+    title: "ESPECIALIDADES ",
+    description: "Equipe qualificada em áreas como  Oncologia, Cirurgia, Anestesiologia, Diagnóstico por Imagem, Felinos e muito mais.",
     videoSrc: "/video-oncologia.mp4",
     instagramUrl: "https://www.instagram.com/reel/DNWgkdjOG8v/"
   },
@@ -88,24 +88,19 @@ export function Diferenciais() {
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
-            {/* O grid agora tem a classe 'items-stretch' */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
               {diferenciais.map((item, index) => {
-                // ... (a lógica 'if' para decidir o tipo de card permanece a mesma)
                 if (item.videoSrc) {
                   return (
-                    // Card de VÍDEO
                     <div 
                       key={index} 
                       onClick={() => setSelectedVideo(item)}
-                      // A altura não é mais necessária aqui, pois o grid cuida disso
                       className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm transition-all cursor-pointer hover:shadow-lg hover:-translate-y-1 bg-[#fff]"
                     >
                       <div className="absolute top-3 right-3 text-primary/70">
                         <Video size={24} />
                       </div>
                       {item.icon}
-                      {/* Adicionei 'flex-grow' para empurrar a descrição para baixo e alinhar os títulos */}
                       <div className="flex flex-col flex-grow justify-center">
                         <h3 className="mt-4 mb-2 font-poppins text-xl font-bold text-secondary">{item.title}</h3>
                         <p className="text-muted-foreground text-sm">{item.description}</p>
@@ -116,9 +111,7 @@ export function Diferenciais() {
                 
                 if (item.imageSrc) {
                   return (
-                    // Card de FLIP
                     <div key={index} className="group h-64 [perspective:1000px] bg-[#fff]">
-                      {/* Nenhuma mudança estrutural necessária aqui, a altura fixa já alinha */}
                       <div className="relative h-full w-full rounded-lg shadow-md transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                         <div className="absolute inset-0 border rounded-lg [backface-visibility:hidden]">
                           <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 text-xs text-primary">
@@ -139,7 +132,6 @@ export function Diferenciais() {
                   )
                 }
 
-                // Card SIMPLES
                 return (
                   <div key={index} className="flex flex-col items-center text-center p-6 border rounded-lg shadow-sm bg-[#fff]">
                     {item.icon}
@@ -155,7 +147,6 @@ export function Diferenciais() {
         </div>
       </section>
 
-      {/* O Modal permanece o mesmo */}
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
         <DialogContent className="max-w-fit p-0 sm:p-4 border-0 bg-transparent shadow-none">
           {selectedVideo?.videoSrc && (
