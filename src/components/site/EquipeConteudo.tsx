@@ -30,7 +30,7 @@ const equipe: MembroEquipe[] = [
   { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 9101", imageSrc: "/equipe-Ramon.jpg", unit: "Imbituba" },
   { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 9101", imageSrc: "/equipe-Mari.jpg", unit: "Imbituba"},
   { name: "Dra. Bruna Oliveira", role: "Clínica e Cirurgia Geral, e Felinos | CRMV-SC 9101", imageSrc: "/equipe-Bruna.jpg", unit: "Imbituba"},
-  // { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 1121", imageSrc: "/equipe-1.jpg", unit: "Imbituba"},
+  { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 1121", imageSrc: "/equipe-Carol.jpg", unit: "Imbituba"},
 ];
 
 
