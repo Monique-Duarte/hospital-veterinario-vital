@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Beaker, Stethoscope, Cat, Microscope, Home, Clock, Plane, Video, Camera, HeartPulse } from "lucide-react";
+import { Beaker, Stethoscope, Cat, Microscope, Home, Clock, Plane, Video, Camera, HeartPulse, X } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { Instagram } from "lucide-react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
 
 type Diferencial = {
   icon: JSX.Element;
@@ -48,7 +47,7 @@ const diferenciais: Diferencial[] = [
   {
     icon: <Beaker className="w-10 h-10 text-primary" />,
     title: "ESPECIALIDADES ",
-    description: "Equipe qualificada em áreas como  Oncologia, Cirurgia, Anestesiologia, Diagnóstico por Imagem, Felinos e muito mais.",
+    description: "Equipe qualificada em áreas como Oncologia, Cirurgia, Anestesiologia, Diagnóstico por Imagem, Felinos e muito mais.",
     videoSrc: "/video-oncologia.mp4",
     instagramUrl: "https://www.instagram.com/reel/DNWgkdjOG8v/"
   },
@@ -98,7 +97,7 @@ export function Diferenciais() {
                     <div
                       key={index}
                       onClick={() => setSelectedVideo(item)}
-                      className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm transition-all cursor-pointer hover:shadow-lg hover:-translate-y-1 bg-[#fff]"
+                      className="relative flex flex-col h-full items-center text-center p-6 border rounded-lg shadow-sm transition-all cursor-pointer hover:shadow-lg hover:-translate-y-1 bg-[#fff]"
                     >
                       <div className="absolute top-3 right-3 text-primary/70">
                         <Video size={24} />
@@ -154,7 +153,7 @@ export function Diferenciais() {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col items-center text-center p-6 border rounded-lg shadow-sm bg-[#fff]"
+                    className="flex flex-col h-full items-center text-center p-6 border rounded-lg shadow-sm bg-[#fff]"
                   >
                     {item.icon}
                     <div className="flex flex-col flex-grow justify-center">
@@ -173,22 +172,22 @@ export function Diferenciais() {
         </div>
       </section>
 
-
+      {/* ===== INÍCIO DO MODAL ===== */}
       <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
-        <DialogContent className="max-w-fit p-0 sm:p-4 border-0 bg-transparent shadow-none relative">
-          <DialogPrimitive.Close className="absolute right-0 -top-2 sm:right-2 sm:top-2 rounded-sm opacity-80 ring-offset-background transition-opacity hover:opacity-100 z-50 bg-white/80 p-1">
-            <X className="h-6 w-6 text-secondary" />
-            <span className="sr-only">Fechar</span>
-          </DialogPrimitive.Close>
-          
-          <DialogHeader className="sr-only">
-            <DialogPrimitive.DialogTitle>{`Vídeo sobre ${selectedVideo?.title}`}</DialogPrimitive.DialogTitle>
-            <DialogPrimitive.DialogDescription>{selectedVideo?.description}</DialogPrimitive.DialogDescription>
-          </DialogHeader>
-
+        <DialogContent className="max-w-fit p-0 sm:p-4 border-0 bg-transparent shadow-none">
           {selectedVideo?.videoSrc && (
             <div className="flex flex-col items-center gap-4">
-              <div className="h-[90vh] sm:h-[80vh] aspect-[9/16] rounded-lg overflow-hidden shadow-lg"> 
+              <div className="relative h-[90vh] sm:h-[80vh] aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
+                <DialogPrimitive.Close className="absolute right-2 top-2 rounded-sm opacity-80 ring-offset-background transition-opacity hover:opacity-100 z-50 bg-white/80 p-1">
+                  <X className="h-6 w-6 text-secondary" />
+                  <span className="sr-only">Fechar</span>
+                </DialogPrimitive.Close>
+                
+                <DialogHeader className="sr-only">
+                  <DialogTitle>{`Vídeo sobre ${selectedVideo?.title}`}</DialogTitle>
+                  <DialogDescription>{selectedVideo?.description}</DialogDescription>
+                </DialogHeader>
+
                 <video 
                   key={selectedVideo.videoSrc} 
                   className="w-full h-full object-cover" 
