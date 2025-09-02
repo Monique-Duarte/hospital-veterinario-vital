@@ -31,10 +31,17 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Hospital Veterinário Vital - Atendimento 24h",
       },
     ],
     locale: "pt_BR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hospital Veterinário Vital 24h | Imbituba, Garopaba e Laguna",
+    description: "Atendimento de emergência e especialidades veterinárias.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

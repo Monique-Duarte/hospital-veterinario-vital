@@ -29,10 +29,8 @@ export function SobreVital() {
           </div>
 
           <div className="space-y-4 flex flex-col items-center">
-            {/* O vídeo e a imagem agora só renderizam se isClient for true */}
             {isClient && (
               <>
-                {/* Bloco do Vídeo: Visível em telas médias (md) para cima */}
                 <div className="hidden md:block w-auto max-h-[560px] rounded-lg overflow-hidden shadow-lg aspect-[9/16]">
                   <video 
                     className="w-full h-full object-cover"
@@ -41,8 +39,6 @@ export function SobreVital() {
                     poster="/video-hospital-poster.jpg"
                   />
                 </div>
-
-                {/* Bloco da Imagem: Visível APENAS em telas pequenas (abaixo de md) */}
                 <div className="block md:hidden w-full max-w-md rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src="/equipe-imbituba.png"
