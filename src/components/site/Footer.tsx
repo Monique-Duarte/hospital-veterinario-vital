@@ -49,7 +49,7 @@ export function Footer() {
                     <span>(48) 99650-9743 (Emergência)</span>
                 </a>
                 <a href="https://app.pipefy.com/public/form/mrVar9Vi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white hover:underline pt-2">
-                  <Briefcase size={16} /> Trabalhe na Unidade Laguna
+                  <Briefcase size={16} /> Trabalhe Conosco - Unidade Laguna
                 </a>
               </div>
 
@@ -68,7 +68,7 @@ export function Footer() {
                     <span>(48) 99800-0012 (Emergência)</span>
                 </a>
                 <a href="https://app.pipefy.com/public/form/mrVar9Vi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white hover:underline pt-2">
-                  <Briefcase size={16} /> Trabalhe na Unidade Imbituba
+                  <Briefcase size={16} /> Trabalhe Conosco - Unidade Imbituba
                 </a>
               </div>
               
