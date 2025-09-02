@@ -5,20 +5,20 @@ import { WhatsappIcon } from "../icons/WhatsappIcon";
 
 const unidades = [
   {
-    name: "Unidade Imbituba / Garopaba",
-    address: "Rodovia SC 434, km 01, Araçatuba, Imbituba - SC, 88780-000",
-    imageSrc: "/hero-imbituba.png",
-    mapLink: "https://maps.app.goo.gl/H8f5D9L9qoX3JTTm7",
-    phone: "4898000012",
-    whatsapp: "554898000012",
-  },
-  {
     name: "Unidade Laguna",
     address: "Av. João Pinho, 586 - Mar Grosso, Laguna - SC, 88790-000",
     imageSrc: "/hero-laguna.png",
     mapLink: "https://maps.app.goo.gl/tsjzoGDKREnidFfj8",
     phone: "4896509743",
     whatsapp: "554896509743",
+  },
+  {
+    name: "Unidade Imbituba / Garopaba",
+    address: "Rodovia SC 434, km 01, Araçatuba, Imbituba - SC, 88780-000",
+    imageSrc: "/hero-imbituba.png",
+    mapLink: "https://maps.app.goo.gl/H8f5D9L9qoX3JTTm7",
+    phone: "4898000012",
+    whatsapp: "554898000012",
   },
 ];
 

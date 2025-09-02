@@ -24,18 +24,23 @@ type VideoEducativo = {
 
 
 const equipe: MembroEquipe[] = [
-  { name: "Dr. Douglas Vicentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 0000", imageSrc: "/equipe-Douglas.jpg", unit: "Imbituba"},
+  { name: "Dr. Douglas Vicentin", role: "Sócio Proprietário, Oncologista, Cirurgião | CRMV-SC 5003", imageSrc: "/equipe-Douglas.jpg", unit: "Laguna"},
   { name: "Dra. Ana Lívia Vicentin", role: "Anestesiologista e Clínica de Felinos | CRMV-SC 0000", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
   { name: "Dr. Guilherme Pereira", role: "Anestesiologista, Responsável Técnico e Coordenador de equipe | CRMV-SC 11054", imageSrc: "/equipe-Gui.png", unit: "Imbituba"},
-  { name: "Dra. Andressa Spengler", role: "Cirurgia Geral e Oncologista | CRMV-SC 0000", imageSrc: "/equipe-Andressa.jpg", unit: "Imbituba"},
-  { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 0000", imageSrc: "/equipe-Ramon.jpg", unit: "Imbituba" },
-  { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 0000", imageSrc: "/equipe-Mari.jpg", unit: "Imbituba"},
-  { name: "Dra. Bruna Oliveira", role: "Clínica e Cirurgia Geral, e Felinos | CRMV-SC 0000", imageSrc: "/equipe-Bruna.jpg", unit: "Imbituba"},
+  { name: "Dra. Andressa Spengler", role: "Sócia-proprietária, Cirurgia Geral e Oncologista | CRMV-SC 14192", imageSrc: "/equipe-Andressa.jpg", unit: "Imbituba"},
+  { name: "Dr. Ramon Santiago", role: "Clínico Geral, Responsável pelo Setor de Felinos | CRMV-SC 12456 ", imageSrc: "/equipe-Ramon.jpg", unit: "Imbituba" },
+  { name: "Dra. Marina Noronha", role: "Clínica Geral | CRMV-SC 14205", imageSrc: "/equipe-Mari.jpg", unit: "Imbituba"},
+  { name: "Dra. Bruna Oliveira", role: "Clínica e Cirurgia Geral, e Felinos | CRMV-SC 9959", imageSrc: "/equipe-Bruna.jpg", unit: "Imbituba"},
   { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 12602", imageSrc: "/equipe-Carol.png", unit: "Imbituba"}, 
+  { name: "Dra. Letícia de Oliveira", role: "Anestesiologista | CRMV-SC 12405", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
+  { name: "Dra. Letícia Laureano", role: "Clinica Médica | CRMV-SC 13580", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
+  { name: "Dr. Bruna Micheleto", role: "Clinica Médica | CRMV-SC 15204", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
+  { name: "Dr. Vitor Anacleto", role: "Clinica Médica | CRMV-SC 14491", imageSrc: "/equipe-Vitor.jpg", unit: "Laguna"},
+  // { name: "Dr. ", role: "Cirurgião | CRMV-SC 0000", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
 ];
 
-const equipeImbituba = equipe.filter(membro => membro.unit === "Imbituba");
 const equipeLaguna = equipe.filter(membro => membro.unit === "Laguna");
+const equipeImbituba = equipe.filter(membro => membro.unit === "Imbituba");
 
 const videos: VideoEducativo[] = [
   { title: "Lidando com Casos Complexos", description: "Entenda como nossa equipe multidisciplinar atua.", posterSrc: "/poster-casos.jpg", videoSrc: "/video-casos.mp4", instagramUrl: "https://www.instagram.com/reel/DM8u8C_u2Rw/" },
@@ -67,15 +72,15 @@ export function EquipeConteudo() {
             </p>
           </div>
 
-          {equipeImbituba.length > 0 && (
+          {equipeLaguna.length > 0 && (
             <div className="mb-16">
               <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">
-                Unidade Imbituba
+                Unidade Laguna
               </h3>
               <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
-                {equipeImbituba.map((membro) => (
+                {equipeLaguna.map((membro) => (
                   <div key={membro.name} className="flex flex-col items-center text-center space-y-2 max-w-[120px]">
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden shadow-md">
+                    <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-md">
                       <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover" />
                     </div>
                     <h4 className="font-poppins font-semibold text-base leading-tight">{membro.name}</h4>
@@ -86,16 +91,16 @@ export function EquipeConteudo() {
             </div>
           )}
 
-          {equipeLaguna.length > 0 && (
-            <div>
+          {equipeImbituba.length > 0 && (
+            <div className="mb-16">
               <h3 className="font-poppins text-2xl font-bold text-secondary mb-8 text-center">
-                Unidade Laguna
+                Unidade Imbituba
               </h3>
               <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
-                {equipeLaguna.map((membro) => (
+                {equipeImbituba.map((membro) => (
                   <div key={membro.name} className="flex flex-col items-center text-center space-y-2 max-w-[120px]">
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden shadow-md">
-                      <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover" />
+                    <div className="relative w-32 h-32 overflow-hidden shadow-md object-cover rounded-full">
+                      <Image src={membro.imageSrc} alt={`Foto de ${membro.name}`} fill className="object-cover rounded-full" />
                     </div>
                     <h4 className="font-poppins font-semibold text-base leading-tight">{membro.name}</h4>
                     <p className="text-xs text-muted-foreground leading-tight">{membro.role}</p>

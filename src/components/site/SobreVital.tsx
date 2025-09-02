@@ -19,22 +19,11 @@ export function SobreVital() {
           
           <div className="space-y-6">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">
-              Cuidando de quem você ama!
+              Emoção, razão e inovação ao cuidar do seu pet
             </h2>
             <div className="hidden md:block space-y-4">
               <p className="text-lg text-muted-foreground">
-                Há mais de 10 anos buscamos a excelência no atendimento e tratamento aos animais. Entender a diferença entre uma clínica e um hospital 24h é fundamental para garantir o melhor cuidado.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Assista ao nosso vídeo e conheça a estrutura completa que oferecemos para levar carinho, atenção e buscar na ciência o alívio da dor e o conforto.
-              </p>
-            </div>
-            <div className="block md:hidden space-y-4">
-              <p className="text-lg text-muted-foreground">
-                Somos pioneiros na infraestrutura, na tecnologia e na qualificação de nossos profissionais para oferecer o melhor atendimento para pets de Santa Catarina.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Nossa equipe de especialistas trabalha com tecnologia de ponta e um compromisso inabalável com a ética, o amor e o respeito pela vida.
+                Somos o Hospital Veterinário Vital. Somos emoção, razão e inovação! Há mais de 10 anos buscamos a excelência no atendimento e tratamento aos animais. Somos pioneiros na infraestrutura, na tecnologia e na qualificação dos nossos serviços e profissionais para oferecer o melhor atendimento para pets de Santa Catarina. Levar carinho e atenção, trabalhar com a cabeça e o coração e buscar na ciência o alívio da dor e conforto.
               </p>
             </div>
           </div>

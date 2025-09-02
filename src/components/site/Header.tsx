@@ -186,20 +186,20 @@ export function Header() {
               <div className="grid gap-4 py-4">
                 <Button asChild>
                   <a
-                    href={`https://wa.me/${contatos.imbituba.whatsapp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <WhatsappIcon className="mr-2 h-4 w-4" /> WhatsApp Imbituba
-                  </a>
-                </Button>
-                <Button asChild>
-                  <a
                     href={`https://wa.me/${contatos.laguna.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <WhatsappIcon className="mr-2 h-4 w-4" /> WhatsApp Laguna
+                  </a>
+                </Button>
+                <Button asChild>
+                  <a
+                    href={`https://wa.me/${contatos.imbituba.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WhatsappIcon className="mr-2 h-4 w-4" /> WhatsApp Imbituba
                   </a>
                 </Button>
               </div>
@@ -226,27 +226,6 @@ export function Header() {
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-6 py-4">
-                <div className="space-y-2">
-                  <h3 className="font-poppins font-semibold text-secondary-foreground">
-                    Unidade Imbituba / Garopaba
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    <Button asChild className="w-full">
-                      <a href={`tel:${contatos.imbituba.emergencia}`}>
-                        <Phone className="mr-2 h-4 w-4" /> Ligar Agora
-                      </a>
-                    </Button>
-                    <Button asChild className="w-full">
-                      <a
-                        href={contatos.imbituba.mapLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MapPin className="mr-2 h-4 w-4" /> Ver no Mapa
-                      </a>
-                    </Button>
-                  </div>
-                </div>
                 {/* Unidade Laguna */}
                 <div className="space-y-2">
                   <h3 className="font-poppins font-semibold text-secondary-foreground">
@@ -261,6 +240,27 @@ export function Header() {
                     <Button asChild className="w-full">
                       <a
                         href={contatos.laguna.mapLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MapPin className="mr-2 h-4 w-4" /> Ver no Mapa
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-poppins font-semibold text-secondary-foreground">
+                    Unidade Imbituba / Garopaba
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    <Button asChild className="w-full">
+                      <a href={`tel:${contatos.imbituba.emergencia}`}>
+                        <Phone className="mr-2 h-4 w-4" /> Ligar Agora
+                      </a>
+                    </Button>
+                    <Button asChild className="w-full">
+                      <a
+                        href={contatos.imbituba.mapLink}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
