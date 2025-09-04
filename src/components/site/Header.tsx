@@ -35,21 +35,33 @@ export function Header() {
   const [isHidden, setIsHidden] = useState(false);
   const lastScrollY = useRef(0);
 
-  useEffect(() => {
+useEffect(() => {
     const handleScroll = () => {
-      const sections = ["inicio", "sobre-vital", "equipe", "diferenciais", "servicos", "unidades", "contato"];
-      const currentScrollY = window.scrollY;
+      const sections = ["inicio", "sobre-vital", "equipe", "diferenciais", "servicos", "unidades", "footer"];
+      const offset = 150;
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= offset && rect.bottom >= offset) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
 
+      const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
       }
-
       lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -59,24 +71,24 @@ export function Header() {
       isHidden ? "-translate-y-full" : "translate-y-0"
     )}>
       <div className="container mx-auto h-24 flex items-center justify-between">
-        <Link href="#inicio" className="flex items-center gap-3">
+        <Link href="#inicio" className="flex items-center">
           <Image
             src={logo}
             alt="Logo Hospital Veterinário Vital"
-            className="h-[80px] w-auto md:h-[120px]"
+            className="h-[80px] w-auto xl:h-[120px]"
           />
         </Link>
-        <nav className="hidden lg:flex items-center gap-8 text-lg">
-          <Link href="#inicio" className={cn("transition-colors hover:text-white", activeSection === "inicio" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Início</Link>
-          <Link href="#sobre-vital" className={cn("transition-colors hover:text-white", activeSection === "sobre-vital" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Sobre</Link>
-          <Link href="#equipe" className={cn("transition-colors hover:text-white", activeSection === "equipe" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Equipe</Link>
-          <Link href="#servicos" className={cn("transition-colors hover:text-white", activeSection === "servicos" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Serviços</Link>
-          <Link href="#diferenciais" className={cn("transition-colors hover:text-white", activeSection === "diferenciais" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Diferenciais</Link>
-          <Link href="#unidades" className={cn("transition-colors hover:text-white", activeSection === "unidades" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Unidades</Link>
-          <Link href="#footer" className={cn("transition-colors hover:text-white", activeSection === "footer" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Contato</Link>
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-8 xl:text-lg">
+          <Link href="#inicio" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "inicio" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Início</Link>
+          <Link href="#sobre-vital" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "sobre-vital" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Sobre</Link>
+          <Link href="#equipe" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "equipe" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Equipe</Link>
+          <Link href="#servicos" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "servicos" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Serviços</Link>
+          <Link href="#diferenciais" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "diferenciais" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Diferenciais</Link>
+          <Link href="#unidades" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "unidades" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Unidades</Link>
+          <Link href="#footer" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "footer" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Contato</Link>
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4 xl:gap-8">
           <a href="https://www.instagram.com/vital.hospitalveterinario/" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/80 hover:text-white transition-colors">
             <Instagram className="h-7 w-7" />
           </a>

@@ -22,7 +22,7 @@ const equipe: MembroEquipe[] = [
   { name: "Dra. Letícia Laureano", role: "Clínica Geral | CRMV-SC 13580", imageSrc: "/equipe-LeticiaLaureano.jpg", unit: "Laguna"},
   { name: "Dra. Bruna Micheleto", role: "Clínica Geral | CRMV-SC 15204", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
   { name: "Dr. Vitor Anacleto", role: "Clínica Geral | CRMV-SC 14491", imageSrc: "/equipe-Vitor.jpg", unit: "Laguna"},
-  { name: "Dra. Eduarda Sproesser", role: "Clínica Geral e Anestesista | CRMV-SC 00000", imageSrc: "/equipe-Duda.jpg", unit: "Imbituba"},
+  { name: "Dra. Eduarda Sproesser", role: "Clínica Geral e Anestesista", imageSrc: "/equipe-Duda.jpg", unit: "Imbituba"},
   // { name: "Dr. ", role: "Cirurgião | CRMV-SC 0000", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
 ];
 

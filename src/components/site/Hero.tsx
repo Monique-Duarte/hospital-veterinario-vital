@@ -77,13 +77,13 @@ export function Hero() {
           <div className="absolute inset-0 bg-black/40" /> 
           
           <div className={`absolute z-10 ${slide.textPositionClass} p-4 max-w-3xl`}>
-            <h1 className="font-poppins text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className="font-poppins text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight drop-shadow-md">
               {slide.title}
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-white/90">
+            <p className="mt-4 text-lg sm:text-xl text-white/90 drop-shadow-md">
               {slide.subtitle}
             </p>
-            <Button asChild className="mt-8 px-8 py-6 text-lg">
+            <Button asChild className="mt-8 px-8 py-6 text-lg shadow-lg hover:brightness-110">
               <Link href={slide.buttonLink}>{slide.buttonText}</Link>
             </Button>
           </div>
