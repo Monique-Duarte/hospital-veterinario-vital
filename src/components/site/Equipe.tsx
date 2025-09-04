@@ -19,7 +19,7 @@ const equipe: MembroEquipe[] = [
   { name: "Dra. Bruna Oliveira", role: "Clínica de Felinos e Cirurgia de Tecidos Moles | CRMV-SC 9959", imageSrc: "/equipe-Bruna.jpg", unit: "Imbituba"},
   { name: "Dra. Caroline Tessmer", role: "Ultrassonografista | CRMV-SC 12602", imageSrc: "/equipe-Carol.png", unit: "Imbituba"}, 
   { name: "Dra. Letícia de Oliveira", role: "Anestesista | CRMV-SC 12405", imageSrc: "/equipe-LeticiaOliveira.jpg", unit: "Laguna"},
-  { name: "Dra. Letícia Laureano", role: "Clínica Geral | CRMV-SC 13580", imageSrc: "/equipe-LeticiaLaureano.jpg", unit: "Laguna"}, 
+  { name: "Dra. Letícia Laureano", role: "Clínica Geral | CRMV-SC 13580", imageSrc: "/equipe-LeticiaL.png", unit: "Laguna"}, 
   { name: "Dra. Bruna Micheleto", role: "Clínica Geral | CRMV-SC 15204", imageSrc: "/equipe-1.jpg", unit: "Laguna"},
   { name: "Dr. Vitor Anacleto", role: "Clínica Geral | CRMV-SC 14491", imageSrc: "/equipe-Vitor.jpg", unit: "Laguna"},
   { name: "Dra. Eduarda Sproesser", role: "Clínica Geral e Anestesista", imageSrc: "/equipe-Duda.jpg", unit: "Imbituba"},
