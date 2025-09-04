@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/assets/logoBranca.png';
-import { Instagram, Phone, MapPin, Briefcase } from 'lucide-react';
+import { Instagram, Phone, MapPin, Briefcase, Mail } from 'lucide-react';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function Footer() {
   return (
-    <footer id="contato" className="bg-primary text-primary-foreground pt-12 lg:pt-24 pb-8">
+    <footer id="contato" className="bg-secondary text-primary-foreground pt-12 lg:pt-24 pb-8">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           
@@ -48,6 +48,10 @@ export function Footer() {
                     <Phone size={16}/>
                     <span>(48) 99650-9743 (Emergência)</span>
                 </a>
+                <a href="mailto:contato@vitalhospitalveterinario.com.br" className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-white">
+                  <Mail size={16} />
+                  <span>contato@vitalhospitalveterinario.com.br</span>
+                </a>
                 <a href="https://app.pipefy.com/public/form/mrVar9Vi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white hover:underline pt-2">
                   <Briefcase size={16} /> Trabalhe Conosco - Unidade Laguna
                 </a>
@@ -66,6 +70,10 @@ export function Footer() {
                 <a href="tel:48998000012" className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-white">
                     <Phone size={16}/> 
                     <span>(48) 99800-0012 (Emergência)</span>
+                </a>
+                <a href="mailto:contato@vitalhospitalveterinario.com.br" className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-white">
+                  <Mail size={16} />
+                  <span>contato@vitalhospitalveterinario.com.br</span>
                 </a>
                 <a href="https://app.pipefy.com/public/form/mrVar9Vi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white hover:underline pt-2">
                   <Briefcase size={16} /> Trabalhe Conosco - Unidade Imbituba

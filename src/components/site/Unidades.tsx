@@ -15,7 +15,7 @@ const unidades = [
   {
     name: "Unidade Imbituba / Garopaba",
     address: "Rodovia SC 434, km 01, Araçatuba, Imbituba - SC, 88780-000",
-    imageSrc: "/hero-imbituba.png",
+    imageSrc: "/unidade-imbituba.jpeg",
     mapLink: "https://maps.app.goo.gl/H8f5D9L9qoX3JTTm7",
     phone: "4898000012",
     whatsapp: "554898000012",
@@ -24,7 +24,7 @@ const unidades = [
 
 export function Unidades() {
   return (
-    <section id="unidades" className="py-12 lg:py-24 bg-white">
+    <section id="unidades" className="py-12 bg-white">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-12">
           <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">

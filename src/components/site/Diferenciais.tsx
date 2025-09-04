@@ -46,7 +46,7 @@ const diferenciais: Diferencial[] = [
   },
   {
     icon: <Beaker className="w-10 h-10 text-primary" />,
-    title: "ESPECIALIDADES ",
+    title: "Especialidades ",
     description: "Equipe qualificada em áreas como Oncologia, Cirurgia, Anestesiologia, Diagnóstico por Imagem, Felinos e muito mais.",
     videoSrc: "/video-oncologia.mp4",
     instagramUrl: "https://www.instagram.com/reel/DNWgkdjOG8v/"
@@ -78,14 +78,16 @@ export function Diferenciais() {
 
   return (
     <>
-      <section id="diferenciais" className="py-12 lg:py-24 bg-primary-light">
+      <section id="diferenciais" className="py-12 bg-primary-light">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 mb-12">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">
               Nossos Diferenciais
             </h2>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
-              Tecnologia e cuidado que fazem a diferença na vida do seu pet.
+              Tecnologia e cuidado que fazem a diferença.
+            </p>
+            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
               Interaja com os cards para saber mais.
             </p>
           </div>

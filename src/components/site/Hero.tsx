@@ -26,9 +26,19 @@ const slides = [
   //   buttonLink: "#unidades",
   //   textPositionClass: "bottom-5 md:bottom-5 left-1/2 -translate-x-1/2 text-center w-full",
   // },
-  {
-    id: 3,
-    image: "/hero.png", 
+  // {
+  //   id: 3,
+  //   image: "/hero.png", 
+  //   alt: "Cão e Gato juntos",
+  //   title: "Emoção, razão e inovação ao cuidar do seu pet",
+  //   subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba.",
+  //   buttonText: "Encontre a Unidade Mais Próxima",
+  //   buttonLink: "#unidades",
+  //   textPositionClass: "bottom-5 md:bottom-5 left-1/2 -translate-x-1/2 text-center w-full",
+  // },
+    {
+    id: 4,
+    image: "/HV-Hero-2.png", 
     alt: "Cão e Gato juntos",
     title: "Emoção, razão e inovação ao cuidar do seu pet",
     subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba.",
@@ -54,7 +64,7 @@ export function Hero() {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+            index === currentSlide ? "opacity-100" : "opacity-100"
           }`}
         >
           <Image
@@ -64,7 +74,7 @@ export function Hero() {
             priority={index === 0}
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/60" /> 
+          <div className="absolute inset-0 bg-black/40" /> 
           
           <div className={`absolute z-10 ${slide.textPositionClass} p-4 max-w-3xl`}>
             <h1 className="font-poppins text-4xl sm:text-5xl md:text-5xl font-bold text-white leading-tight">

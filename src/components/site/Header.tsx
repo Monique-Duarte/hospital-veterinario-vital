@@ -1,10 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logoBranca.png";
+import logo from "@/assets/logo_vital_transparente_branco.png";
 import { Instagram, Phone, MapPin } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import {
@@ -31,148 +32,59 @@ const contatos = {
 
 export function Header() {
   const [activeSection, setActiveSection] = useState("inicio");
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
-        "inicio",
-        "sobre-vital",
-        "equipe-conteudo",
-        "diferenciais",
-        "servicos",
-        "unidades",
-        "contato",
-      ];
-      const offset = 150;
+      const sections = ["inicio", "sobre-vital", "equipe", "diferenciais", "servicos", "unidades", "contato"];
+      const currentScrollY = window.scrollY;
 
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= offset && rect.bottom >= offset) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
       }
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-primary text-primary-foreground z-50 shadow-md">
-      <div className="container mx-auto h-20 flex items-center justify-between">
+    <header className={cn(
+      "fixed top-0 left-0 w-full bg-secondary text-secondary-foreground z-50 shadow-md transition-transform duration-300",
+      isHidden ? "-translate-y-full" : "translate-y-0"
+    )}>
+      <div className="container mx-auto h-24 flex items-center justify-between">
         <Link href="#inicio" className="flex items-center gap-3">
           <Image
             src={logo}
             alt="Logo Hospital Veterinário Vital"
-            className="brightness-0 invert"
-            height={50}
+            className="h-[80px] w-auto md:h-[120px]"
           />
         </Link>
-
-        <nav className="hidden lg:flex items-center gap-6">
-          <Link
-            href="#inicio"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "inicio"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Início
-          </Link>
-          <Link
-            href="#sobre-vital"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "sobre-vital"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Sobre
-          </Link>
-          <Link
-            href="#equipe-conteudo"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "equipe-conteudo"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Equipe
-          </Link>
-          <Link
-            href="#servicos"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "servicos"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Serviços
-          </Link>
-          <Link
-            href="#diferenciais"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "diferenciais"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Diferenciais
-          </Link>
-          <Link
-            href="#unidades"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "unidades"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Unidades
-          </Link>
-          <Link
-            href="#contato"
-            className={cn(
-              "transition-colors hover:text-white",
-              activeSection === "contato"
-                ? "text-white font-semibold"
-                : "text-primary-foreground/80"
-            )}
-          >
-            Contato
-          </Link>
+        <nav className="hidden lg:flex items-center gap-8 text-lg">
+          <Link href="#inicio" className={cn("transition-colors hover:text-white", activeSection === "inicio" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Início</Link>
+          <Link href="#sobre-vital" className={cn("transition-colors hover:text-white", activeSection === "sobre-vital" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Sobre</Link>
+          <Link href="#equipe" className={cn("transition-colors hover:text-white", activeSection === "equipe" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Equipe</Link>
+          <Link href="#servicos" className={cn("transition-colors hover:text-white", activeSection === "servicos" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Serviços</Link>
+          <Link href="#diferenciais" className={cn("transition-colors hover:text-white", activeSection === "diferenciais" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Diferenciais</Link>
+          <Link href="#unidades" className={cn("transition-colors hover:text-white", activeSection === "unidades" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Unidades</Link>
+          <Link href="#footer" className={cn("transition-colors hover:text-white", activeSection === "footer" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Contato</Link>
         </nav>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="https://www.instagram.com/vital.hospitalveterinario/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-white"
-          >
-            <Instagram className="h-4 w-4" />
+        <div className="flex items-center gap-5">
+          <a href="https://www.instagram.com/vital.hospitalveterinario/" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/80 hover:text-white transition-colors">
+            <Instagram className="h-7 w-7" />
           </a>
           <Dialog>
             <DialogTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="flex border-primary-foreground/50 hover:bg-primary-foreground/10 hover:text-white"
-              >
-                <WhatsappIcon className="h-6 w-6" />
-              </Button>
+              <button className="text-secondary-foreground/80 hover:text-white transition-colors">
+                <WhatsappIcon className="h-7 w-7" />
+              </button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px] bg-secondary border-none">
               <DialogHeader>
