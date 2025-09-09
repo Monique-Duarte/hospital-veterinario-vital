@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '@/assets/logoBranca.png';
+import logo from '@/../public/logoBranca.png';
 import { Instagram, Phone, MapPin, Briefcase, Mail } from 'lucide-react';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function Footer() {
   return (
-    <footer id="contato" className="bg-secondary text-primary-foreground pt-12 lg:pt-24 pb-8">
+    <footer id="contato" className="bg-secondary text-primary-foreground py-12 lg:pt-24 pb-8">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           

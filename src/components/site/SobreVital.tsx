@@ -14,16 +14,19 @@ export function SobreVital() {
 
   return (
     <section id="sobre-vital" className="py-12 bg-primary-light">
-      <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container  max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 items-center">
           
-          <div className="space-y-6">
+          <div className="text-center space-y-6 mt-6 w-full">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">
               Emoção, razão e inovação
             </h2>
-            <div className="hidden md:block space-y-4">
-              <p className="text-lg text-muted-foreground">
-                Somos o Hospital Veterinário Vital. Somos emoção, razão e inovação! Há quase 15 anos buscamos a excelência no atendimento e tratamento aos animais. Somos pioneiros na infraestrutura, na tecnologia e na qualificação dos nossos serviços e profissionais para oferecer o melhor atendimento para pets de Santa Catarina. Levar carinho e atenção, trabalhar com a cabeça e o coração e buscar na ciência o alívio da dor e conforto.
+            <div className="block space-y-4">
+              <p className="text-xl text-muted-foreground w-full">
+                Somos emoção, razão e inovação! Há quase 15 anos buscamos a excelência no atendimento e tratamento aos animais. <br></br> 
+                <br></br>
+                Somos pioneiros na infraestrutura, na tecnologia e na qualificação dos nossos serviços e profissionais para oferecer o melhor atendimento para pets de Santa Catarina. <br></br> <br></br> 
+                Levar carinho e atenção, trabalhar com a cabeça e o coração e buscar na ciência o alívio da dor e conforto.
               </p>
             </div>
           </div>

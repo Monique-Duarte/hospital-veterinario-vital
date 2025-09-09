@@ -78,7 +78,7 @@ export function Diferenciais() {
 
   return (
     <>
-      <section id="diferenciais" className="py-12 bg-primary-light">
+      <section id="diferenciais" className="py-12 md:py-24 bg-primary-light">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 mb-12">
             <h2 className="font-poppins text-3xl font-bold tracking-tighter sm:text-4xl text-secondary">

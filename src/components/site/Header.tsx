@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo_vital_transparente_branco.png";
+import logo from "@/../public/logo_vital_transparente_branco.png";
 import { Instagram, Phone, MapPin } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import {
@@ -150,7 +150,8 @@ useEffect(() => {
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-6 py-4">
-                {/* Unidade Laguna */}
+
+
                 <div className="space-y-2">
                   <h3 className="font-poppins font-semibold text-secondary-foreground">
                     Unidade Laguna
