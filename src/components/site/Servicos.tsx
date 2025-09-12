@@ -7,7 +7,6 @@ const servicos = [
   "Diagnóstico por Imagem",
   "Cirurgias de Baixa, Média e Alta Complexidade",
   "Odontologia Veterinária",
-  "Especialidades",
   "Exames Laboratoriais",
   "Internação 24h",
   "Farmácia Pet",
