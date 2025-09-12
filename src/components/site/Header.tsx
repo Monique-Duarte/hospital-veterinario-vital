@@ -85,7 +85,7 @@ useEffect(() => {
           <Link href="#servicos" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "servicos" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Serviços</Link>
           <Link href="#diferenciais" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "diferenciais" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Diferenciais</Link>
           <Link href="#unidades" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "unidades" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Unidades</Link>
-          <Link href="#footer" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "footer" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Contato</Link>
+          <Link href="#contato" className={cn("transition-colors hover:text-white hover:underline underline-offset-4", activeSection === "contato" ? "text-white font-semibold" : "text-secondary-foreground/80")}>Contato</Link>
         </nav>
 
         <div className="flex items-center gap-4 xl:gap-8">

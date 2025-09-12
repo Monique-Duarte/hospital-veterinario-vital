@@ -28,7 +28,7 @@ const slides = [
   // },
     {
     id: 3,
-    image: "/HV-Hero-2.webp", 
+    image: "/HV-Hero.webp", 
     alt: "Cão e Gato juntos",
     title: "Emoção, razão e inovação ao cuidar do seu pet",
     subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba.",
