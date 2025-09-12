@@ -22,13 +22,13 @@ const diferenciais: Diferencial[] = [
     icon: <Clock className="w-10 h-10 text-primary" />,
     title: "Atendimento 24h",
     description: "Nossa equipe está sempre a postos para emergências, a qualquer hora do dia ou da noite.",
-    imageSrc: "/diferencial-24h.jpg"
+    imageSrc: "/diferencial-24h.webp"
   },
   {
     icon: <Microscope className="w-10 h-10 text-primary" />,
     title: "Laboratório Próprio",
     description: "Resultados de exames mais rápidos e precisos, agilizando o diagnóstico e o tratamento.",
-    imageSrc: "/diferencial-lab.jpg"
+    imageSrc: "/diferencial-lab.webp"
   },
   {
     icon: <Cat className="w-10 h-10 text-primary" />,
@@ -69,7 +69,7 @@ const diferenciais: Diferencial[] = [
     icon: <Plane className="w-10 h-10 text-primary" />,
     title: "Viagens Internacionais",
     description: "Realizamos todos os exames e a preparação documental necessária para a viagem do seu cão.",
-    imageSrc: "/diferencial-viagem.png"
+    imageSrc: "/diferencial-viagem.webp"
   },
 ];
 

@@ -7,7 +7,7 @@ const unidades = [
   {
     name: "Unidade Laguna",
     address: "Av. João Pinho, 586 - Mar Grosso, Laguna - SC, 88790-000",
-    imageSrc: "/hero-laguna.png",
+    imageSrc: "/unidade-laguna.webp",
     mapLink: "https://maps.app.goo.gl/tsjzoGDKREnidFfj8",
     phone: "4896509743",
     whatsapp: "554896509743",
@@ -15,7 +15,7 @@ const unidades = [
   {
     name: "Unidade Imbituba / Garopaba",
     address: "Rodovia SC 434, km 01, Araçatuba, Imbituba - SC, 88780-000",
-    imageSrc: "/unidade-imbituba.jpeg",
+    imageSrc: "/unidade-imbituba.webp",
     mapLink: "https://maps.app.goo.gl/H8f5D9L9qoX3JTTm7",
     phone: "4898000012",
     whatsapp: "554898000012",

@@ -39,12 +39,12 @@ export function SobreVital() {
                     className="w-full h-full object-cover"
                     src="/video-hospital.mp4" 
                     controls
-                    poster="/video-hospital-poster.jpg"
+                    poster="/video-hospital-poster.webp"
                   />
                 </div>
                 <div className="block md:hidden w-full max-w-md rounded-lg overflow-hidden shadow-lg">
                   <Image
-                    src="/equipe-imbituba.png"
+                    src="/equipe-imbituba.webp"
                     alt="Equipe do Hospital Veterinário Vital"
                     width={500}
                     height={350}

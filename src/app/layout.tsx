@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Hospital Veterinário Vital",
     images: [
       {
-        url: "/og-image.png",
+        url: "/logoSocial.png",
         width: 1200,
         height: 630,
         alt: "Hospital Veterinário Vital - Atendimento 24h",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hospital Veterinário Vital 24h | Imbituba, Garopaba e Laguna",
     description: "Atendimento de emergência e especialidades veterinárias.",
-    images: ["/og-image.png"],
+    images: ["/logoSocial.png"],
   },
   robots: {
     index: true,
@@ -79,7 +79,7 @@ export default function RootLayout({
             "description": "Hospital Veterinário 24h com duas unidades em Santa Catarina, oferecendo emergência, cirurgias, oncologia e cuidados especializados.",
             "telephone": "+5548998000012",
             "url": "https://www.vitalhospitalveterinario.com.br",
-            "image": "/og-image.png",
+            "image": "/logoSocial.png",
             "address": [
               {
                 "@type": "PostalAddress",

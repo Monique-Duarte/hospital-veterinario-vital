@@ -17,10 +17,10 @@ type VideoEducativo = {
 };
 
 const videos: VideoEducativo[] = [
-  { title: "Lidando com Casos Complexos", description: "Entenda como nossa equipe multidisciplinar atua.", posterSrc: "/poster-casos.jpg", videoSrc: "/video-casos.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/reel/DM8u8C_u2Rw/" },
-  { title: "A Importância do Check-up", description: "Prevenção é o melhor caminho para uma vida longa e saudável.", posterSrc: "/poster-checkup.jpg", videoSrc: "/video-checkup.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/reel/C1rr4d9OY1Z/" },
-  { title: "Obstrução uretral em Felinos", description: "Essa é uma complicação que pode causar sérios riscos à vida do seu amigo.", posterSrc: "/poster-obstrucao.jpg", videoSrc: "/video-cuidado-felinos.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/reel/DBMCzMTO4v_/" },
-  { title: "Como minimizar o estresse do paciente", description: "O nervosismo do pet pode interferir no exame e até no diagnóstico.", posterSrc: "/poster-comportamento.jpg", videoSrc: "/video-comportamento.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/p/DNYUlNhuN7J/" },
+  { title: "Lidando com Casos Complexos", description: "Entenda como nossa equipe multidisciplinar atua.", posterSrc: "/poster-casos.webp", videoSrc: "/video-casos.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/reel/DM8u8C_u2Rw/" },
+  { title: "A Importância do Check-up", description: "Prevenção é o melhor caminho para uma vida longa e saudável.", posterSrc: "/poster-checkup.webp", videoSrc: "/video-checkup.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/reel/C1rr4d9OY1Z/" },
+  { title: "Obstrução uretral em Felinos", description: "Essa é uma complicação que pode causar sérios riscos à vida do seu amigo.", posterSrc: "/poster-obstrucao.webp", videoSrc: "/video-cuidado-felinos.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/reel/DBMCzMTO4v_/" },
+  { title: "Como minimizar o estresse do paciente", description: "O nervosismo do pet pode interferir no exame e até no diagnóstico.", posterSrc: "/poster-comportamento.webp", videoSrc: "/video-comportamento.mp4", alt: "Vídeo sobre o conteúdo", instagramUrl: "https://www.instagram.com/p/DNYUlNhuN7J/" },
 ];
 
 export function Educativo() {

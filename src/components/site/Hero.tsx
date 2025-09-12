@@ -8,7 +8,7 @@ import Link from "next/link";
 const slides = [
   // {
   //   id: 1,
-  //   image: "/hero-imbituba.png", 
+  //   image: "/unidade-imbituba.webp", 
   //   alt: "Fachada do Hospital Veterinário Vital em Imbituba",
   //   title: "Emoção, razão e inovação ao cuidar do seu pet",
   //   subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba.",
@@ -18,7 +18,7 @@ const slides = [
   // },
   // {
   //   id: 2,
-  //   image: "/hero-laguna.png",    
+  //   image: "/unidade-laguna.webp",    
   //   alt: "Fachada do Hospital Veterinário Vital em Laguna",
   //   title: "Emoção, razão e inovação ao cuidar do seu pet",
   //   subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba",
@@ -26,19 +26,9 @@ const slides = [
   //   buttonLink: "#unidades",
   //   textPositionClass: "bottom-5 md:bottom-5 left-1/2 -translate-x-1/2 text-center w-full",
   // },
-  // {
-  //   id: 3,
-  //   image: "/hero.png", 
-  //   alt: "Cão e Gato juntos",
-  //   title: "Emoção, razão e inovação ao cuidar do seu pet",
-  //   subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba.",
-  //   buttonText: "Encontre a Unidade Mais Próxima",
-  //   buttonLink: "#unidades",
-  //   textPositionClass: "bottom-5 md:bottom-5 left-1/2 -translate-x-1/2 text-center w-full",
-  // },
     {
-    id: 4,
-    image: "/HV-Hero-2.png", 
+    id: 3,
+    image: "/HV-Hero-2.webp", 
     alt: "Cão e Gato juntos",
     title: "Emoção, razão e inovação ao cuidar do seu pet",
     subtitle: "Atendimento 24h em Laguna, Garopaba e Imbituba.",
