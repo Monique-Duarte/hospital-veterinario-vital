@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import logo from "@/../public/logo_vital_transparente_branco.webp";
+import logo from "@/../public/logoSocial2.png";
 import { Instagram, Phone, MapPin } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import {
