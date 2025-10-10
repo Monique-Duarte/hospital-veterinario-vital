@@ -12,7 +12,7 @@ type MembroEquipe = {
 
 const equipe: MembroEquipe[] = [
   { name: "Dr. Douglas Vicentin", role: "Sócio Fundador, Diretor Geral | CRMV-SC 5003", imageSrc: "/equipe-Douglas.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"},
-  { name: "Dra. Ana Lívia Vicentin", role: "Sócia Fundadora, Anestesiologia e Medicina Felina | CRMV-SC 0000", imageSrc: "/equipe-1.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"},
+  { name: "Dra. Ana Lívia Vicentin", role: "Sócia Fundadora, Anestesiologia e Medicina Felina | CRMV-SC 04952", imageSrc: "/equipe-1.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"},
   { name: "Dr. Guilherme Pereira", role: "Anestesiologia, Responsável Técnico e Coordenador de equipe | CRMV-SC 11054", imageSrc: "/equipe-Gui.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Imbituba"},
   { name: "Dra. Andressa Spengler", role: "Cirurgia de Tecidos Moles e Oncologia | CRMV-SC 14192", imageSrc: "/equipe-Andressa.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Imbituba"},
   { name: "Dr. Ramon Santiago", role: "Clínica Geral, Medicina Felina | CRMV-SC 12456 ", imageSrc: "/equipe-Ramon.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Imbituba" },
@@ -23,7 +23,7 @@ const equipe: MembroEquipe[] = [
   { name: "Dra. Letícia Laureano", role: "Clínica Geral | CRMV-SC 13580", imageSrc: "/equipe-LeticiaL.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"}, 
   { name: "Dra. Bruna Micheleto", role: "Clínica Geral | CRMV-SC 15204", imageSrc: "/equipe-1.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"},
   { name: "Dr. Vitor Anacleto", role: "Clínica Geral | CRMV-SC 14491", imageSrc: "/equipe-Vitor.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"},
-  { name: "Dra. Eduarda Sproesser", role: "Clínica Geral e Anestesiologia", imageSrc: "/equipe-Duda.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Imbituba"},
+  { name: "Dra. Eduarda Sproesser", role: "Clínica Geral | CRMV-SC 15381", imageSrc: "/equipe-Duda.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Imbituba"},
   // { name: "Dr. ", role: "Cirurgião | CRMV-SC 0000", imageSrc: "/equipe-1.webp", alt: "Foto do médico(a) Veterinário(a)", unit: "Laguna"},
 ];
 
